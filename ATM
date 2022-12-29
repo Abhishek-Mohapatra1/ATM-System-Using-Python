@@ -1,0 +1,40 @@
+avail_amount=100000
+
+print('Please insert your card')
+pin=eval(input('Please enter 4 digit pin :'))
+if pin>9999 or pin<1000:
+    print('Wrong PIN entered')
+else:
+    mode=('1: Money Withdraw  \n 2: Pin change  \n 3: Mini Statement')
+    print(mode)
+    press=int(input('enter the mode :'))
+    if press==1:
+        input_amount=eval(input('enter the amount :'))
+        
+        if input_amount>avail_amount:
+            print('insufficient amount available in your bank')
+            print('\n\t')
+            print('thank you for using XYZ Bank')
+        else:
+            print(input_amount,'Rs transaction done.')
+            print('Current available amount in your bank is :',avail_amount-input_amount)
+            print('\n')
+            print('Thank you for using XYZ Bank')
+    elif press==2:
+        num=int(input('enter the Mobile Number :'))
+        if num>9999999999 or num<1000000000:
+            print('invalid Phone Number')
+        else:
+            OTP=int(input('enter the OTP sent to your mobile number :'))
+            if OTP>9999 or OTP<1000:
+                print('wrong OTP')
+            else:
+                new_pin=int(input('Set new 4-Digit PIN :'))
+                if new_pin>9999 or new_pin<1000:
+                    print('PIN out of range')
+                else:
+                    print('PIN has been changed')
+    elif press==3:
+        print('the avail amount is :',avail_amount)
+    else:
+        print('Thank you for using XYZ Bank')
